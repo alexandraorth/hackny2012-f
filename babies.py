@@ -14,6 +14,7 @@ def index():
 def print_form():
     if request.method == 'GET':
         name = request.args.get('spermcount')
+        search.searching(name)
         print name
         print render_template('index.html',result = request.args['spermcount'])
         return render_template('index.html',result = request.args['spermcount'])
