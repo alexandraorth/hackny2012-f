@@ -1,23 +1,23 @@
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request
 import os
 from flask import render_template
 import search
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
-    spermcount =  search.searching("Justin Bieber")
     return render_template('index.html')
 
 @app.route('/search')
 def print_form():
-    if request.method == 'GET':
-        name = request.args.get('spermcount')
-        search.searching(name)
-        print name
-        print render_template('index.html',result = request.args['spermcount'])
-        return render_template('index.html',result = request.args['spermcount'])
+    name = request.args.get('name')
+    spermcount = search.searching(name)
+#        print name
+#       print render_template('index.html',result = request.args['name'])
+#        return render_template('index.html',result = request.args['name'])
+    return render_template('result.html', count = spermcount)
 
 
 if __name__ == '__main__':
