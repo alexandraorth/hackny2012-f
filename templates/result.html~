@@ -33,7 +33,7 @@ path {
 
 var w = 960,
     h = 500,
-    n = {{count}}, <!--Sperm count!-->
+    n = 10, <!--Sperm count!-->
     m = 12,
     degrees = 180 / Math.PI;
 

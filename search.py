@@ -2,6 +2,7 @@ from temboo.Library.Twitter.Search import Query
 from temboo.core.session import TembooSession
 
 def searching(string):
+    print string
     session = TembooSession(
         "alexandraorth",
         "myFirstApp",
