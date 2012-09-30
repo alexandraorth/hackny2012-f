@@ -1,4 +1,6 @@
-from flask import Flask
+from flask import Flask, request, redirect, url_for
+from flask.ext.bootstrap import Bootstrap
+import os
 from flask import render_template
 import search
 app = Flask(__name__)
