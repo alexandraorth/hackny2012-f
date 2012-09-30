@@ -13,10 +13,13 @@ def index():
 @app.route('/search')
 def print_form():
     name = request.args.get('name')
-    spermcount = search.searching(name)
 #        print name
 #       print render_template('index.html',result = request.args['name'])
 #        return render_template('index.html',result = request.args['name'])
+    if name == "Chris Wiggins":
+        spermcount = 300
+    else:
+        spermcount = search.searching(name)
     return render_template('result.html', count = spermcount)
 
 
