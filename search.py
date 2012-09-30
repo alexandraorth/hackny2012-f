@@ -15,6 +15,7 @@ choreo = Query(session)
 # Get an InputSet object for the choreo
 inputs = choreo.new_input_set()
 
+inputs.set_SinceId(249672500605222913)
 # Set inputs
 inputs.set_Query("Justin Bieber have my babies")
 
