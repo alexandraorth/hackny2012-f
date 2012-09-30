@@ -4,7 +4,7 @@ from flask import render_template
 import search
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
 	spermcount =  search.searching("Justin Bieber")
 	return render_template('index.html')
