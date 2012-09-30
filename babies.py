@@ -3,6 +3,7 @@ import os
 from flask import render_template
 import search
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
@@ -11,11 +12,9 @@ def index():
 
 @app.route('/search')
 def print_form():
-    print "0hello world!"
     if request.method == 'GET':
         name = request.args.get('spermcount')
         print name
-        print "1hello world!"
         print render_template('index.html',result = request.args['spermcount'])
         return render_template('index.html',result = request.args['spermcount'])
 
