@@ -24,4 +24,6 @@ inputs.set_Query("Justin Bieber have my babies")
 # Execute choreo
 results = choreo.execute_with_results(inputs)
 
-print results.get_Response().encode('utf-8')
+str = results.get_Response().encode('utf-8')
+
+print str.count('statuses')
