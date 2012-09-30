@@ -4,20 +4,22 @@ from flask import render_template
 import search
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-	spermcount =  search.searching("Justin Bieber")
-	return render_template('index.html')
+    spermcount =  search.searching("Justin Bieber")
+    return render_template('index.html')
 
-app.route('/',methods=['GET','POST'])
+@app.route('/search')
 def print_form():
-    if request.method == 'POST':
-        return render_template('index.html')
+    print "0hello world!"
     if request.method == 'GET':
-	    print render_template('index.html',result=request.form['spermcount'])
-	    return render_template('index.html',result=request.form['spermcount'])
+        name = request.args.get('spermcount')
+        print name
+        print "1hello world!"
+        print render_template('index.html',result = request.args['spermcount'])
+        return render_template('index.html',result = request.args['spermcount'])
 
 
 if __name__ == '__main__':
-	port = int(os.environ.get('PORT', 5000))
-	app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
