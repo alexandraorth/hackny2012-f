@@ -6,13 +6,11 @@ It was a fun way to get introduced to using Flask and Python.
 
 Completely novel. Don't take us seriously, because we don't take ourselves seriously, seriously.
 
-*
-Python
-Flask
-Temboo
-D3
+Python  
+Flask  
+Temboo API for Twitter  
+D3  
 
-*
 
 Alex Orth, Lisa Li, Daria Jung.
 With help from Howie Mao. :)
